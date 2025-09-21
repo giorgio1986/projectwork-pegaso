@@ -1,0 +1,43 @@
+version: '3.4'
+services:
+  # Setup Postgresql Container
+  postgresql:
+    build: ./config/postgresql
+    container_name: previ-suite-postgresql
+    restart: always
+    
+    environment:
+      POSTGRES_USER: ${PG_DB_USER}
+      POSTGRES_PASSWORD: ${PG_DB_PASS}
+      POSTGRES_DB: ${PG_DB_NAME}
+
+    ports:
+      - ${PG_PORT}:5432
+
+    networks:
+      previ-suite-network:
+
+    volumes:
+      - previ-suite-postgresql:/var/lib/postgresql/data
+      
+  # Setup Quarkus Container
+  edoc:
+    build: ./config/quarkus
+    container_name: previ-suite-quarkus
+    restart: always
+   
+    ports:
+      - ${QUARKUS_PORT}:8080
+      
+    networks:
+      previ-suite-network:
+      
+    volumes:
+      - ./filesystem/previgiorgio:/opt/filesystem
+
+volumes:
+  previ-suite-postgresql:
+    
+networks:
+  previ-suite-network:
+    driver: bridge

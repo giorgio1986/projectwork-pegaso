@@ -1,0 +1,604 @@
+swagger: '2.0'
+info:
+  contact: {}
+  title: PreviGiorgio
+  version: 1.0.0
+basePath: '/localhost:8080/'
+paths:
+  /previ-suite-service-previgiorgio/api/v1/members/addresses:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Addresses
+      description: GetAddresses
+      operationId: getaddresses
+      summary: GetAddresses
+    post:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              address:
+                example: Via G.Ungaretti 48
+                type: string
+              addressType:
+                example: RESIDENTIAL_ADDRESS
+                type: string
+              location:
+                example: GIARRE (95014)
+                type: string
+              nation:
+                example: ITALIA
+                type: string
+              province:
+                example: CATANIA
+                type: string
+            type: object
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Addresses
+      description: AddAddress
+      operationId: addaddress
+      summary: AddAddress
+  /previ-suite-service-previgiorgio/api/v1/members/addresses/{addressId}:
+    parameters:
+      - in: path
+        name: addressId
+        required: true
+        type: string
+    delete:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Addresses
+      description: DeleteAddress
+      operationId: deleteaddress
+      summary: DeleteAddress
+    put:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              address:
+                example: Via G.Ungaretti 50
+                type: string
+            type: object
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Addresses
+      description: UpdateAddress
+      operationId: updateaddress
+      summary: UpdateAddress
+  /previ-suite-service-previgiorgio/api/v1/members/beneficiaries:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Beneficiaries
+      description: GetBeneficiaries
+      operationId: getbeneficiaries
+      summary: GetBeneficiaries
+    post:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              beneficiaryType:
+                example: NATURAL_ENTITY
+                type: string
+              birthDate:
+                example: 24-11-1988
+                type: string
+              fiscalCode:
+                example: SCHGRG86E19C351R
+                type: string
+              gender:
+                example: FEMALE
+                type: string
+              location:
+                example: GIARRE (95014)
+                type: string
+              name:
+                example: Elena
+                type: string
+              nation:
+                example: ITALIA
+                type: string
+              province:
+                example: CATANIA
+                type: string
+              surname:
+                example: Termini
+                type: string
+            type: object
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Beneficiaries
+      description: AddBeneficiary
+      operationId: addbeneficiary
+      summary: AddBeneficiary
+  /previ-suite-service-previgiorgio/api/v1/members/beneficiaries/{beneficiaryId}:
+    parameters:
+      - in: path
+        name: beneficiaryId
+        required: true
+        type: string
+    delete:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Beneficiaries
+      description: DeleteBeneficiary
+      operationId: deletebeneficiary
+      summary: DeleteBeneficiary
+    put:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              beneficiaryType:
+                example: NATURAL_ENTITY
+                type: string
+              birthDate:
+                example: 24-11-1988
+                type: string
+              fiscalCode:
+                example: SCHGRG86E19C351R
+                type: string
+              gender:
+                example: FEMALE
+                type: string
+              location:
+                example: GIARRE (95014)
+                type: string
+              name:
+                example: Elena Maria Caterina
+                type: string
+              nation:
+                example: ITALIA
+                type: string
+              province:
+                example: CATANIA
+                type: string
+              surname:
+                example: Termini
+                type: string
+            type: object
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Beneficiaries
+      description: UpdateBeneficiary
+      operationId: updatebeneficiary
+      summary: UpdateBeneficiary
+  /previ-suite-service-previgiorgio/api/v1/members/cases:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Cases
+      description: GetCases
+      operationId: getcases
+      summary: GetCases
+  /previ-suite-service-previgiorgio/api/v1/members/cases/documents:
+    post:
+      consumes:
+        - multipart/form-data
+      parameters:
+        - format: binary
+          in: formData
+          name: documents
+          type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Cases
+      description: uploadDocuments
+      operationId: uploaddocuments
+      summary: uploadDocuments
+  /previ-suite-service-previgiorgio/api/v1/members/contacts:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Contacts
+      description: GetContacts
+      operationId: getcontacts
+      summary: GetContacts
+    post:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              email:
+                example: giorgio1986@hotmail.it
+                type: string
+              phone:
+                example: '0957911060'
+                type: string
+            type: object
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Contacts
+      description: AddContacts
+      operationId: addcontacts
+      summary: AddContacts
+    put:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              electronicCommunications:
+                example: true
+                type: boolean
+              email:
+                example: giorgio1986@hotmail.it
+                type: string
+              emailPec:
+                example: null
+                x-nullable: true
+              mobilePhone:
+                example: '3930175478'
+                type: string
+              phone:
+                example: '0957911060'
+                type: string
+            type: object
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Contacts
+      description: UpdateContacts
+      operationId: updatecontacts
+      summary: UpdateContacts
+  /previ-suite-service-previgiorgio/api/v1/members/designatedsubjects:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - DesignatedSubjects
+      description: GetDesignatedSubjects
+      operationId: getdesignatedsubjects
+      summary: GetDesignatedSubjects
+    post:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              beneficiaryId:
+                example: 4
+                type: number
+              distribution:
+                example: 1
+                type: number
+              ordering:
+                example: 0
+                type: number
+            type: object
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - DesignatedSubjects
+      description: AddDesignatedsubject
+      operationId: adddesignatedsubject
+      summary: AddDesignatedsubject
+  /previ-suite-service-previgiorgio/api/v1/members/designatedsubjects/{designatedsubjectsId}:
+    parameters:
+      - in: path
+        name: designatedsubjectsId
+        required: true
+        type: string
+    delete:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - DesignatedSubjects
+      description: DeleteBeneficiary
+      operationId: deletebeneficiary1
+      summary: DeleteBeneficiary
+    put:
+      consumes:
+        - text/plain
+      parameters:
+        - in: body
+          name: body
+          schema:
+            format: binary
+            type: string
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - DesignatedSubjects
+      description: UpdateDesignatedsubject
+      operationId: updatedesignatedsubject
+      summary: UpdateDesignatedsubject
+  /previ-suite-service-previgiorgio/api/v1/members/documents:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Documents
+      description: GetDocuments
+      operationId: getdocuments
+      summary: GetDocuments
+  /previ-suite-service-previgiorgio/api/v1/members/documents/1:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Documents
+      description: GetDocument
+      operationId: getdocument
+      summary: GetDocument
+  /previ-suite-service-previgiorgio/api/v1/members/operatios:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Operations
+      description: GetOperations
+      operationId: getoperations
+      summary: GetOperations
+  /previ-suite-service-previgiorgio/api/v1/members/questionnaires:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Questionnaire
+      description: GetQuestionnaire
+      operationId: getquestionnaire
+      summary: GetQuestionnaire
+  /previ-suite-service-previgiorgio/api/v1/members/questionnaires/{questionnaireId}:
+    parameters:
+      - in: path
+        name: questionnaireId
+        required: true
+        type: string
+    put:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              '1':
+                example: '1'
+                type: string
+              '2':
+                example: '1'
+                type: string
+              '3':
+                example: '67'
+                type: string
+              '4':
+                example: '40'
+                type: string
+              '5':
+                example: '1'
+                type: string
+              '6':
+                example: '0'
+                type: string
+              '7':
+                example: '1'
+                type: string
+              '8':
+                example: '5'
+                type: string
+              '9':
+                example: '2'
+                type: string
+            type: object
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Members
+        - Questionnaire
+      description: UpdateQuestionnaire
+      operationId: updatequestionnaire
+      summary: UpdateQuestionnaire
+  /previ-suite-service-previgiorgio/api/v1/public/ping:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Public
+      description: Ping
+      operationId: ping
+      summary: Ping
+  /previ-suite-service-previgiorgio/api/v1/users:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Users
+      description: GetUser
+      operationId: getuser
+      summary: GetUser
+  /previ-suite-service-previgiorgio/api/v1/users/login:
+    post:
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          schema:
+            properties:
+              password:
+                example: ''
+                type: string
+              username:
+                example: ''
+                type: string
+            type: object
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Users
+      description: Login
+      operationId: login
+      summary: Login
+  /previ-suite-service-previgiorgio/api/v1/users/logout:
+    get:
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Api
+        - v1
+        - Users
+      description: Logout
+      operationId: logout
+      summary: Logout
+tags:
+  - name: Api
+  - name: v1
+  - name: Public
+  - name: Users
+  - name: Members
+  - name: Contacts
+  - name: Addresses
+  - name: Beneficiaries
+  - name: DesignatedSubjects
+  - name: Questionnaire
+  - name: Documents
+  - name: Cases
+  - name: Operations
