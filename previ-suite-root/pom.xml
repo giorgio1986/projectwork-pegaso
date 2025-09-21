@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>it.unipegaso.previ.suite</groupId>
+    <artifactId>previ-suite-root</artifactId>
+    <name>previ-suite-root</name>
+	<version>0.0.1</version>
+    <packaging>pom</packaging>
+
+    <modules>
+		<module>../previ-suite-bean</module>
+		<module>../previ-suite-model</module>
+		<module>../previ-suite-repository-port</module>
+		<module>../previ-suite-repository-adapter</module>
+		<module>../previ-suite-service-port</module>
+		<module>../previ-suite-service-adapter</module>
+		<module>../previ-suite-presentation-port</module>
+		<module>../previ-suite-presentation-adapter</module>
+        <module>../previ-suite-webapp</module>
+		<module>../previ-suite-runner</module>
+	</modules>
+
+	<properties>
+		<!-- Java release -->
+		<java.release>21</java.release>
+
+		<!-- Quarkus configuration -->
+		<quarkus.platform.version>3.15.2</quarkus.platform.version>
+		<quarkus.profile>dev</quarkus.profile>
+		<build.properties>../conf/build.properties.EMPTY</build.properties>
+
+		<!-- maven plugins versions -->
+		<maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+		<maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>3.3.1</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>3.3.1</maven-failsafe-plugin.version>
+		<gmavenplus-plugin.version>1.13.1</gmavenplus-plugin.version>
+		<groovy.version>3.0.22</groovy.version>
+
+		<!-- Project application configuration -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<project.application-name>previ-suite-service</project.application-name>
+        <project.cod-frontend>previ-suite</project.cod-frontend>
+		<project.cod-client>dev</project.cod-client>
+		<project.baseDir>${project.basedir}</project.baseDir>
+		<project.db-migration.filename>dbMigrations.txt</project.db-migration.filename>
+
+		<!-- Project dependencies versions -->
+		<io.smallrye.version>4.5.1</io.smallrye.version>
+		<com.google.guava.version>33.3.1-jre</com.google.guava.version>
+		<org.mindrot.version>0.4</org.mindrot.version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- internal dependencies -->
+
+			<dependency>
+				<groupId>it.unipegaso.previ.suite</groupId>
+				<artifactId>previ-suite-bean</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>it.unipegaso.previ.suite</groupId>
+				<artifactId>previ-suite-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>it.unipegaso.previ.suite</groupId>
+				<artifactId>previ-suite-repository-port</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>it.unipegaso.previ.suite</groupId>
+				<artifactId>previ-suite-repository-adapter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>it.unipegaso.previ.suite</groupId>
+				<artifactId>previ-suite-service-port</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>it.unipegaso.previ.suite</groupId>
+				<artifactId>previ-suite-service-adapter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>it.unipegaso.previ.suite</groupId>
+				<artifactId>previ-suite-presentation-port</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>it.unipegaso.previ.suite</groupId>
+				<artifactId>previ-suite-presentation-adapter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+            <dependency>
+                <groupId>it.unipegaso.previ.suite</groupId>
+                <artifactId>previ-suite-webapp</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+			<!-- external dependencies -->
+
+			<dependency>
+				<groupId>io.quarkus</groupId>
+				<artifactId>quarkus-bom</artifactId>
+				<version>${quarkus.platform.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>io.quarkus</groupId>
+				<artifactId>quarkus-smallrye-openapi</artifactId>
+				<version>${quarkus.platform.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.smallrye</groupId>
+				<artifactId>smallrye-jwt-build</artifactId>
+				<version>${io.smallrye.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${com.google.guava.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mindrot</groupId>
+				<artifactId>jbcrypt</artifactId>
+				<version>${org.mindrot.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<profiles>
+		<profile>
+			<id>client-previgiorgio</id>
+			<properties>
+				<project.cod-client>previgiorgio</project.cod-client>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>env-local</id>
+			<properties>
+				<quarkus.profile>dev</quarkus.profile>
+				<project.environment>local</project.environment>
+				<build.properties>../conf/build.properties.local</build.properties>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>env-test</id>
+			<properties>
+				<quarkus.profile>test</quarkus.profile>
+				<project.environment>test</project.environment>
+				<build.properties>../conf/build.properties.test</build.properties>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>env-collaudo</id>
+			<properties>
+				<quarkus.profile>test</quarkus.profile>
+				<project.environment>collaudo</project.environment>
+				<build.properties>../conf/build.properties.collaudo</build.properties>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>env-prod</id>
+			<properties>
+				<quarkus.profile>prod</quarkus.profile>
+				<project.environment>production</project.environment>
+				<build.properties>../conf/build.properties.production</build.properties>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>io.quarkus.platform</groupId>
+					<artifactId>quarkus-maven-plugin</artifactId>
+					<version>${quarkus.platform.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin.version}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.gmavenplus</groupId>
+					<artifactId>gmavenplus-plugin</artifactId>
+					<version>${gmavenplus-plugin.version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.codehaus.groovy</groupId>
+							<artifactId>groovy</artifactId>
+							<version>${groovy.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.groovy</groupId>
+							<artifactId>groovy-ant</artifactId>
+							<version>${groovy.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<parameters>true</parameters>
+					<release>${java.release}</release>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>process-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>resources</goal>
+						</goals>
+						<configuration>
+							<encoding>UTF-8</encoding>
+							<useDefaultDelimiters>true</useDefaultDelimiters>
+							<filters>
+								<filter>${build.properties}</filter>
+							</filters>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<systemPropertyVariables>
+						<java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+						<maven.home>${maven.home}</maven.home>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<filters>
+			<filter>${build.properties}</filter>
+		</filters>
+	</build>
+</project>

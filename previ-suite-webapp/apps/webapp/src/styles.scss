@@ -1,0 +1,18 @@
+@import 'primeicons/primeicons.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-secondary-500/10;
+}
+
+* {
+  scrollbar-color: rgba(49, 107, 72, 0.5) transparent;
+  scrollbar-width: thin;
+}
+
+.card {
+  @apply shadow-lg bg-white rounded-xl border-2 p-4;
+}

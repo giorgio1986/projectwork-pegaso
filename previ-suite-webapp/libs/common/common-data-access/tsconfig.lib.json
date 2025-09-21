@@ -1,0 +1,37 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "types": ["vite/client"],
+    "rootDir": "src",
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "resolveJsonModule": true,
+    "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo"
+  },
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "exclude": [],
+  "references": [
+    {
+      "path": "../../address/address-feature/tsconfig.lib.json"
+    },
+    {
+      "path": "../../questionnaire/questionnaire-feature/tsconfig.lib.json"
+    },
+    {
+      "path": "../../home/home-feature/tsconfig.lib.json"
+    },
+    {
+      "path": "../../auth/auth-feature/tsconfig.lib.json"
+    },
+    {
+      "path": "../../auth/auth-data-access/tsconfig.lib.json"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../../address/address-feature"
+    },
+    {
+      "path": "../../questionnaire/questionnaire-feature"
+    },
+    {
+      "path": "../../home/home-feature"
+    },
+    {
+      "path": "../../auth/auth-feature"
+    },
+    {
+      "path": "../../auth/auth-data-access"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}

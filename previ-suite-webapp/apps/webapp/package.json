@@ -1,0 +1,11 @@
+{
+  "name": "@previ-suite-webapp/webapp",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^24.3.0"
+  },
+  "scripts": {
+    "dev": "vite"
+  }
+}

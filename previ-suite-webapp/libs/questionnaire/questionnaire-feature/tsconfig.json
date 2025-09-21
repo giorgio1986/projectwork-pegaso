@@ -1,0 +1,16 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../questionnaire-data-access"
+    },
+    {
+      "path": "../questionnaire-ui"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}

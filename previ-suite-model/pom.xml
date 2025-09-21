@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>previ-suite-model</artifactId>
+    <packaging>jar</packaging>
+    <name>previ-suite-model</name>
+
+    <parent>
+        <groupId>it.unipegaso.previ.suite</groupId>
+        <artifactId>previ-suite-root</artifactId>
+        <version>0.0.1</version>
+        <relativePath>../previ-suite-root/pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+
+        <!-- internal dependencies -->
+
+        <dependency>
+            <groupId>it.unipegaso.previ.suite</groupId>
+            <artifactId>previ-suite-bean</artifactId>
+        </dependency>
+        
+        <!-- external dependencies -->
+
+        <dependency>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-reactive-datasource</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-jdbc-postgresql</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus.platform</groupId>
+                <artifactId>quarkus-maven-plugin</artifactId>
+                <configuration>
+                    <warnIfBuildGoalMissing>false</warnIfBuildGoalMissing>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

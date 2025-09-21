@@ -1,0 +1,16 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../address-data-access"
+    },
+    {
+      "path": "../address-ui"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}

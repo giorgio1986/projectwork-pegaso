@@ -1,0 +1,16 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "../../common/common-data-access"
+    },
+    {
+      "path": "../address-util"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
+}

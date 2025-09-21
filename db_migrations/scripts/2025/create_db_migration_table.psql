@@ -1,0 +1,9 @@
+create table if not exists db_migrations
+(
+	id serial not null,
+	script varchar not null,
+	apply_timestamp timestamp default current_timestamp not null,
+
+	constraint db_migrations_pk primary key(id),
+    unique (script)
+);

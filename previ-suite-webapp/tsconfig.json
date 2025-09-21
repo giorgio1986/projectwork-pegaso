@@ -1,0 +1,94 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/webapp"
+    },
+    {
+      "path": "./libs/auth/auth-feature"
+    },
+    {
+      "path": "./libs/auth/auth-util"
+    },
+    {
+      "path": "./libs/auth/auth-ui"
+    },
+    {
+      "path": "./libs/auth/auth-data-access"
+    },
+    {
+      "path": "./libs/common/common-data-access"
+    },
+    {
+      "path": "./libs/home/home-data-access"
+    },
+    {
+      "path": "./libs/home/home-feature"
+    },
+    {
+      "path": "./libs/home/home-ui"
+    },
+    {
+      "path": "./libs/home/home-util"
+    },
+    {
+      "path": "./libs/questionnaire/questionnaire-data-access"
+    },
+    {
+      "path": "./libs/questionnaire/questionnaire-feature"
+    },
+    {
+      "path": "./libs/questionnaire/questionnaire-ui"
+    },
+    {
+      "path": "./libs/questionnaire/questionnaire-util"
+    },
+    {
+      "path": "./libs/common/common-ui"
+    },
+    {
+      "path": "./libs/address/address-feature"
+    },
+    {
+      "path": "./libs/address/address-ui"
+    },
+    {
+      "path": "./libs/address/address-util"
+    },
+    {
+      "path": "./libs/address/address-data-access"
+    },
+    {
+      "path": "./libs/contact/contact-data-access"
+    },
+    {
+      "path": "./libs/contact/contact-ui"
+    },
+    {
+      "path": "./libs/contact/contact-util"
+    },
+    {
+      "path": "./libs/contact/contact-feature"
+    },
+    {
+      "path": "./libs/profile/profile-feature"
+    },
+    {
+      "path": "./libs/profile/profile-ui"
+    },
+    {
+      "path": "./libs/beneficiary/beneficiary-data-access"
+    },
+    {
+      "path": "./libs/beneficiary/beneficiary-feature"
+    },
+    {
+      "path": "./libs/beneficiary/beneficiary-ui"
+    },
+    {
+      "path": "./libs/beneficiary/beneficiary-util"
+    }
+  ]
+}
